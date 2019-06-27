@@ -1,16 +1,20 @@
 ﻿using System;
+using TareaXamarin.ViewModels;
+using TareaXamarin.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
 
 namespace TareaXamarin
 {
     public partial class App : Application
     {
-        public App()
+        public App(String filename)
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            VentasViewModel.Inicializador(filename);
+            MainPage = new VentasPage();
         }
 
         protected override void OnStart()
